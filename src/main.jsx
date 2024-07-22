@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import RootPage from './routes/root'
+import RootPage, { loader as rootLoader } from './routes/root'
 import ErrorPage from './error-page'
 import ContactPage from './routes/contact'
 
@@ -16,6 +16,7 @@ const router = createBrowserRouter([
     path: "/",
     element: <RootPage />,
     errorElement: <ErrorPage />,
+    loader: rootLoader,
     children: [
       {
         path: "contacts/:contactId",
