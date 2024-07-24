@@ -4,7 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom"
 
 import RootPage, { loader as rootLoader, action as rootAction } from './routes/root'
 import ErrorPage from './error-page'
-import ContactPage, { loader as contactLoader } from './routes/contact'
+import ContactPage, { loader as contactLoader, action as contactAction } from './routes/contact'
 import EditContact, { action as editAction } from './routes/edit'
 import { action as destroyAction } from './routes/destroy'
 import Index from "./routes/index"
@@ -27,6 +27,7 @@ const router = createBrowserRouter([
         path: "contacts/:contactId",
         element: <ContactPage />,
         loader: contactLoader,
+        action: contactAction,
       },
       {
         path: "contacts/:contactId/edit",
